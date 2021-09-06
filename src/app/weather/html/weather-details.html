@@ -1,0 +1,32 @@
+<div class="ui container segment w-header">
+    <div class="ui medium header w-details-header">Weather Forecast for {{city}}
+        <span class="w-goback">
+            <a (click)="goBack()">
+                <i class="fa fa-arrow-circle-left fa-1x"></i> 
+                <span> Go Back</span> 
+            </a>
+        </span>
+    </div>
+    <table class="ui very basic collapsing celled table w-details-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temperature</th>
+                <th>Sea Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of forecastData">
+                <td>
+                    {{data.date }}
+                </td>
+                <td>
+                    {{data.temperature}}
+                </td>
+                <td>
+                    {{data.seaLevel}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,28 @@
+<div style="margin:15px;">
+    <div class="ui four column doubling stackable grid container">
+        <div *ngFor="let cityData of citiesWeatherData" class="column" style="width: 32%;">
+            <div class="ui link cards">
+                <div class="card" >
+                    <div class="image">
+                        <img (click)="onCityClick(cityData)" style="height: 155px;" src="/assets/images/{{cityData.city}}.jpg" />
+                    </div>
+                    <div class="content">
+                        <div style="margin:3px;">
+                            <span style="float: left;width: 100px;"><b>City </b></span>: {{cityData.city}}
+                        </div>
+                        <div style="margin:3px;">
+                            <span style="float: left;width: 100px;"><b>Temperature </b></span>: {{cityData.tempearture}}
+                        </div>
+                        <div style="margin:3px;">
+                            <span style="float: left;width: 100px;"><b>Sunrise Time </b></span>: 
+                            <span>{{cityData.sunriseTime | timezone : cityData.timeZone}}</span>
+                        </div>
+                        <div style="margin:3px;">
+                            <span style="float: left;width: 100px;"><b>Sunset Time  </b></span>: {{cityData.sunsetTime}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
